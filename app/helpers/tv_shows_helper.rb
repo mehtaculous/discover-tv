@@ -32,4 +32,15 @@ module TvShowsHelper
   def genre(id)
     GENRES[id]
   end
+
+  def rating(num)
+    if num >= 80
+      "success"
+    elsif num >= 50
+      "warning"
+    else
+      "danger"
+    end
+  end
+
 end

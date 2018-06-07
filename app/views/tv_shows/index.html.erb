@@ -9,23 +9,21 @@
       <div class="col-lg-6 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.original_name %></h5>
-          <%= image_tag("default.jpg", class: "card-img-top", size: "200") %>
+          <%= link_to image_tag("default.jpg", class: "card-img-top"), tv_show_path(show.id) %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= show.first_air_date.to_date.strftime('%B %-d, %Y') %></li>
             <li class="list-group-item">
               <% show.genre_ids.each do |id| %>
-                <button type="button" class="btn btn-outline-dark btn-sm m-1"><%= genre(id) %></button>
+                <button type="button" class="btn btn-outline-dark btn-sm m-1">
+                  <%= genre(id) %>
+                </button>
               <% end %>
             </li>
           </ul>
           <div class="card-body">
-            <% if (show.vote_average * 10).to_int >= 80 %>
-              <button type="button" class="btn btn-success"><%= (show.vote_average * 10).to_int %>%</a>
-            <% elsif (show.vote_average * 10).to_int >= 60 %>
-              <button type="button" class="btn btn-warning"><%= (show.vote_average * 10).to_int %>%</a>
-            <% else %>
-              <button type="button" class="btn btn-danger"><%= (show.vote_average * 10).to_int %>%</a>
-            <% end %>
+            <button type="button" class="btn btn-<%= rating(show.vote_average * 10) %>">
+              <span><%= (show.vote_average * 10).to_int %>%</span>
+            </button>
           </div>
         </div>
       </div>
