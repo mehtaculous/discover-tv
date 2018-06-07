@@ -3,7 +3,7 @@
 A web application for discovering new and popular tv shows
 
 
-## Languages, Frameworks and Tools
+## Languages, Frameworks & Tools
 
 1. Ruby on Rails
 
@@ -19,7 +19,7 @@ A web application for discovering new and popular tv shows
 ## Tradeoffs
 
 
-## Missing
+## Missing Features
 
 
 ## Additional Features

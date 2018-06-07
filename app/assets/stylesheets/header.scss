@@ -1,0 +1,32 @@
+/* -------------------------------- */
+/* HEADER CONTENT
+/* -------------------------------- */
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+button.btn.btn-danger.btn-lg:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  button.btn.btn-danger.btn-lg {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+    margin-top: 76px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-caption {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+  }
+}
