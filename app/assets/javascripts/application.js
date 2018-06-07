@@ -17,3 +17,31 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on('turbolinks:load', function() {
+
+  // Navbar color change on scroll
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+      $('.navbar').addClass('scroll');
+    } else {
+      $('.navbar').removeClass('scroll');
+    }
+  });
+
+  // Nav link ease scroll to section
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 90)
+        }, 1500, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
+
+});

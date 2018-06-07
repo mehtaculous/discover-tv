@@ -1,24 +1,25 @@
-# README
+# [Discover TV](https://discover-tv.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web application for discovering new and popular tv shows
 
-Things you may want to cover:
 
-* Ruby version
+## Languages, Frameworks and Tools
 
-* System dependencies
+1. Ruby on Rails
 
-* Configuration
+2. Bootstrap
 
-* Database creation
+3. jQuery
 
-* Database initialization
+4. Heroku
 
-* How to run the test suite
+5. The Movie Database API
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Tradeoffs
 
-* ...
+
+## Missing
+
+
+## Additional Features
