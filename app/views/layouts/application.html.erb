@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discover TV</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body id="home">
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/search' %>
+    <%= yield %>
+  </body>
+</html>
