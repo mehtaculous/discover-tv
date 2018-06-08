@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <% @results.each do |show| %>
-      <div class="col-lg-4 text-center">
+      <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.original_name %></h5>
           <%= link_to image_tag("https://image.tmdb.org/t/p/w780/" + show.backdrop_path, class: "card-img-top"), tv_path %>

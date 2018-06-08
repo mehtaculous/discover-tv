@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="<%= root_path %><%= '#search' if current_page?(root_path) %>">Search</a>
+          <a class="nav-link js-scroll-trigger" href="<%= root_path %><%= current_page?(root_path) ? '#search' : '#home' %>">Search</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="<%= root_path %><%= '#popular' if current_page?(root_path) %>">Popular</a>
+          <a class="nav-link js-scroll-trigger" href="<%= root_path %><%= current_page?(root_path) ? '#popular' : '#home' %>">Popular</a>
         </li>
       </ul>
     </div>
