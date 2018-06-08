@@ -1,6 +1,6 @@
 # [Discover TV](https://discover-tv.herokuapp.com)
 
-A web application for discovering new and popular tv shows
+A search engine for discovering new and popular tv shows
 
 
 ## Languages, Frameworks & Tools

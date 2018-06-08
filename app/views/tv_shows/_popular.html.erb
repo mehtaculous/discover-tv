@@ -9,9 +9,9 @@
       <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.original_name %></h5>
-          <%= link_to image_tag("https://image.tmdb.org/t/p/w780/" + show.backdrop_path, class: "card-img-top"), tv_path %>
+          <%= link_to image_tag(TvShowsHelper::BASE_URL + 'w780' + show.backdrop_path, class: "card-img"), tv_path %>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= show.first_air_date.to_date.strftime('%B %-d, %Y') %></li>
+            <li class="list-group-item"><%= first_air(show.first_air_date) %></li>
             <li class="list-group-item">
               <% show.genre_ids.each do |id| %>
                 <span class="badge badge-pill badge-light my-1"><%= genre(id) %></span>
@@ -19,8 +19,8 @@
             </li>
           </ul>
           <div class="card-body">
-            <button type="button" class="btn btn-<%= rating(show.vote_average * 10) %>">
-              <span><%= (show.vote_average * 10).to_int %>%</span>
+            <button type="button" class="btn btn-<%= rating_color(show.vote_average) %>">
+              <span><%= rating_percentage(show.vote_average) %></span>
             </button>
           </div>
         </div>

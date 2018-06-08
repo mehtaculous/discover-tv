@@ -1,4 +1,7 @@
 module TvShowsHelper
+
+  BASE_URL = "https://image.tmdb.org/t/p/"
+
   GENRES = {
     12 => "Adventure",
     14 => "Fantasy",
@@ -29,18 +32,26 @@ module TvShowsHelper
     10770 => "TV Movie"
   }
 
+  def first_air(date)
+    date.to_date.strftime('%B %-d, %Y')
+  end
+
   def genre(id)
     GENRES[id]
   end
 
-  def rating(num)
-    if num >= 80
+  def rating_color(num)
+    if num >= 8
       "success"
-    elsif num >= 50
+    elsif num >= 5
       "warning"
     else
       "danger"
     end
+  end
+
+  def rating_percentage(num)
+    "#{(num * 10).to_int}%"
   end
 
 end
