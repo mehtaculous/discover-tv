@@ -1,32 +1,5 @@
-<div id="popular" class="container index-content">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3 style="padding-top: 20px">Popular TV Shows</h3>
-    </div>
-  </div>
-  <div class="row">
-    <% @results.each do |show| %>
-      <div class="col-lg-6 text-center">
-        <div class="card">
-          <h5 class="card-header"><%= show.original_name %></h5>
-          <%= link_to image_tag("default.jpg", class: "card-img-top"), tv_show_path(show.id) %>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= show.first_air_date.to_date.strftime('%B %-d, %Y') %></li>
-            <li class="list-group-item">
-              <% show.genre_ids.each do |id| %>
-                <button type="button" class="btn btn-outline-dark btn-sm m-1">
-                  <%= genre(id) %>
-                </button>
-              <% end %>
-            </li>
-          </ul>
-          <div class="card-body">
-            <button type="button" class="btn btn-<%= rating(show.vote_average * 10) %>">
-              <span><%= (show.vote_average * 10).to_int %>%</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'header' %>
+
+<%= render 'search' %>
+
+<%= render 'popular' %>

@@ -15,14 +15,21 @@
   margin: 30px auto;
 }
 
-.card-img-top {
-  width: 288px;
-  height: 200px;
+div.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-button.btn.btn-outline-dark.btn-sm.m-1:focus {
-  outline: none !important;
-  box-shadow: none;
+div.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-img-top {
+  border-radius: 0;
+}
+
+span.badge.badge-pill.badge-light.my-1 {
+  font-size: 14px;
+  border: 1px solid #222;
 }
 
 button.btn.btn-success,
