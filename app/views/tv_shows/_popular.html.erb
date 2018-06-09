@@ -1,15 +1,15 @@
 <div id="popular" class="container index-content">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h3 style="padding-top: 20px">Popular TV Shows</h3>
+      <h3 class="popular">Popular TV Shows</h3>
     </div>
   </div>
   <div class="row">
     <% @results.each do |show| %>
       <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
-          <h5 class="card-header"><%= show.original_name %></h5>
-          <%= link_to image_tag(TvShowsHelper::BASE_URL + 'w780' + show.backdrop_path, class: "card-img"), tv_path %>
+          <h5 class="card-header"><%= show.name %></h5>
+          <%= link_to image_tag(image_present?(show.backdrop_path), class: "card-img"), tv_path %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= first_air(show.first_air_date) %></li>
             <li class="list-group-item">

@@ -7,8 +7,8 @@
   margin-bottom: 100px;
 }
 
-.popular {
-  margin-bottom: 50px;
+h3.popular {
+  padding-top: 20px;
 }
 
 .card {
@@ -25,6 +25,8 @@ div.card:hover {
 }
 
 .card-img {
+  width: 286px;
+  height: 160px;
   border-radius: 0;
 }
 
