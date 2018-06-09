@@ -36,9 +36,14 @@ span.btn.btn-outline-dark.btn-sm.my-1 {
 }
 
 span.btn.btn-outline-dark.btn-sm.my-1:hover,
-span.btn.btn-outline-dark.btn-sm.my-1:focus {
+span.btn.btn-outline-dark.btn-sm.my-1:active {
   color: #000;
   background-color: transparent !important;
+}
+
+span.btn.btn-outline-dark.btn-sm.my-1:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 
 button.btn.btn-success,
