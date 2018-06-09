@@ -30,9 +30,15 @@ div.card:hover {
   border-radius: 0;
 }
 
-span.badge.badge-pill.badge-light.my-1 {
+span.btn.btn-outline-dark.btn-sm.my-1 {
+  height: 30px;
   font-size: 14px;
-  border: 1px solid #222;
+}
+
+span.btn.btn-outline-dark.btn-sm.my-1:hover,
+span.btn.btn-outline-dark.btn-sm.my-1:focus {
+  color: #000;
+  background-color: transparent !important;
 }
 
 button.btn.btn-success,

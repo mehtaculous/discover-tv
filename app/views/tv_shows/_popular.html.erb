@@ -13,8 +13,12 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= first_air(show.first_air_date) %></li>
             <li class="list-group-item">
-              <% show.genre_ids.each do |id| %>
-                <span class="badge badge-pill badge-light my-1"><%= genre(id) %></span>
+              <% if show.genre_ids.present? %>
+                <% show.genre_ids.take(3).each do |id| %>
+                  <span class="btn btn-outline-dark btn-sm my-1"><%= genre(id) %></span>
+                <% end %>
+              <% else %>
+                <span class="btn btn-outline-dark btn-sm my-1">Not Available</span>
               <% end %>
             </li>
           </ul>
