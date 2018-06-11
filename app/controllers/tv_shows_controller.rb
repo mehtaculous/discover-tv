@@ -8,6 +8,6 @@ class TvShowsController < ApplicationController
   end
 
   def show
-    # @result = Tmdb::TV.detail(params[:id])
+    @result = Tmdb::TV.detail(params[:id])
   end
 end

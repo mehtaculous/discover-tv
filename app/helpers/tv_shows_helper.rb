@@ -37,7 +37,7 @@ module TvShowsHelper
   end
 
   def rating_percentage(num)
-    "#{(num * 10).to_int}%"
+    num == 0 ? "NR" : "#{(num * 10).to_int}%"
   end
 
 end

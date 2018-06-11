@@ -9,7 +9,7 @@
       <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.name %></h5>
-          <%= link_to image_tag(image_present?(show.backdrop_path), class: "card-img"), tv_path %>
+          <%= link_to image_tag(image_present?(show.backdrop_path), class: "card-img"), tv_show_path(show.id) %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= first_air(show.first_air_date) %></li>
             <li class="list-group-item">
@@ -18,7 +18,7 @@
                   <span class="btn btn-outline-dark btn-sm my-1"><%= genre(id) %></span>
                 <% end %>
               <% else %>
-                <span class="btn btn-outline-dark btn-sm my-1">Not Available</span>
+                <span class="btn btn-outline-dark btn-sm my-1">NA</span>
               <% end %>
             </li>
           </ul>

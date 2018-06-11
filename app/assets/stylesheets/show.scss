@@ -2,6 +2,15 @@
 /* TV SHOW CONTENT
 /* -------------------------------- */
 .tv-show {
-  width: 100%;
-  height: 100%;
+  margin-top: 75px;
+}
+
+.tv-show-content {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 568px) {
+  .tv-show {
+    text-align: center;
+  }
 }

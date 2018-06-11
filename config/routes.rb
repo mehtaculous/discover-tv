@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'tv', to: 'tv_shows#show'
+  resources :tv_shows, only: [:show]
 
   root 'tv_shows#index'
 
