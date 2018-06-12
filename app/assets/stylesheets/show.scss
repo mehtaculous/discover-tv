@@ -15,6 +15,8 @@
   }
   p.overview {
     text-align: justify;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
     text-align-last: center;
   }
 }

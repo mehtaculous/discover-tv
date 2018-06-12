@@ -7,9 +7,9 @@
     </div>
     <div class="col-md-8">
       <!-- Title & Rating-->
-      <h3><%= @result.name %> (<%= first_air(@result.first_air_date).split.last %>)</h3></span>
+      <h3 style="line-height: 1.5"><%= @result.name %> (<%= first_air(@result.first_air_date).split.last %>)</h3>
       <!-- Genres -->
-      <div class="my-3">
+      <div class="my-4">
         <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %> mr-2 my-1">
           <span><%= rating_percentage(@result.vote_average) %></span>
         </button>
