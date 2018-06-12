@@ -1,67 +1,70 @@
 <%= render 'search' %>
-<div class="tv-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 tv-show-content">
-        <!-- Title -->
-        <h3><%= @result.name %></h3>
-        <!-- Poster -->
-        <%= image_tag(poster_present?(@result.poster_path), size: '200x300') %>
-        <!-- First Air Date -->
-        <p><%= first_air(@result.first_air_date) %></p>
-        <!-- Rating -->
-        <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %>">
+<div class="container tv-show">
+  <div class="row tv-show-content jumbotron">
+    <div class="col-lg-3 offset-lg-1 col-md-4">
+      <!-- Poster -->
+      <%= image_tag(poster_present?(@result.poster_path), size: '200x300', class: 'mb-4') %>
+    </div>
+    <div class="col-md-8">
+      <!-- Title & Rating-->
+      <h3><%= @result.name %> (<%= first_air(@result.first_air_date).split.last %>)</h3></span>
+      <!-- Genres -->
+      <div class="my-3">
+        <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %> mr-2 my-1">
           <span><%= rating_percentage(@result.vote_average) %></span>
         </button>
-        <!-- Genres -->
-        <% @result.genres.each do |genre| %>
-          <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
+        <% if @result.genres.present? %>
+          <% @result.genres.each do |genre| %>
+            <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
+          <% end %>
         <% end %>
-        <!-- Overview -->
-        <% if @result.overview.present? %>
-          <span>
-            <h5>Overview</h5>
-            <p><%= @result.overview %></p>
-          </span>
-        <% end %>
+      </div>
+      <!-- Overview -->
+      <% if @result.overview.present? %>
+        <span>
+          <h5>Overview</h5>
+          <p class="overview"><%= @result.overview %></p>
+        </span>
+      <% end %>
+      <div class="row">
         <!-- Created By -->
         <% if @result.created_by.present? %>
-          <span>
+          <div class="col-sm-6 col-xl-3 my-2">
             <h5>Created By</h5>
-            <p>
-              <% @result.created_by.each do |creator| %>
-                <%= creator.name %><br>
-              <% end %>
-            <p>
-          </span>
+            <% @result.created_by.each do |creator| %>
+              <span class="btn btn-outline-dark btn-sm my-1"><%= creator.name %></span><br>
+            <% end %>
+          </div>
         <% end %>
-        <!-- Networks -->
-        <% if @result.networks.present? %>
-          <span>
-            <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
-            <p>
-              <% @result.networks.each do |network| %>
-                <%= network.name %><br>
-              <% end %>
-            </p>
-          </span>
+        <!-- Series -->
+        <% if @result.number_of_seasons != 0 %>
+          <div class="col-sm-6 col-xl-3 my-2">
+            <h5>Series</h5>
+            <span class="btn btn-outline-dark btn-sm my-1">
+              <%= @result.number_of_seasons %> <%= ' Season'.pluralize(@result.number_of_seasons) %>
+            </span><br>
+            <span class="btn btn-outline-dark btn-sm my-1">
+              <%= @result.number_of_episodes %> Episodes
+            </span>
+          </div>
         <% end %>
         <!-- Runtime -->
         <% if @result.episode_run_time.present? %>
-          <span>
+          <div class="col-sm-6 col-xl-3 my-2">
             <h5>Runtime</h5>
-            <p><%= @result.episode_run_time[0] %> min</p>
-          </span>
+            <% @result.episode_run_time.take(2).each do |time| %>
+              <span class="btn btn-outline-dark btn-sm my-1"><%= time %> min</span><br>
+            <% end %>
+          </div>
         <% end %>
-        <!-- Duration -->
-        <% if @result.number_of_seasons != 0 %>
-          <span>
-            <h5>Duration</h5>
-            <p>
-              <%= @result.number_of_seasons %> <%= ' Season'.pluralize(@result.number_of_seasons) %><br>
-              <%= @result.number_of_episodes %> Episodes
-            </p>
-          </span>
+        <!-- Networks -->
+        <% if @result.networks.present? %>
+          <div class="col-sm-6 col-xl-3 my-2">
+            <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
+            <% @result.networks.each do |network| %>
+              <span class="btn btn-outline-dark btn-sm my-1"><%= network.name %></span><br>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
