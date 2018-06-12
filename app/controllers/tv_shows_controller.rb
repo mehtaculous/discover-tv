@@ -4,7 +4,12 @@ class TvShowsController < ApplicationController
   end
 
   def search
-    # @results = Tmdb::Search.tv(params[:query])
+    if params[:query].present?
+      @total_pages = Tmdb::Search.tv(params[:query]).total_pages
+      @results = Tmdb::Search.tv(params[:query], page: 1).results
+    else
+      redirect_to root_path
+    end
   end
 
   def show

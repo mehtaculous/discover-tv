@@ -10,20 +10,20 @@ module TvShowsHelper
     10768 => "Politics", 10770 => "TV Movie"
   }
 
-  def image_present?(image_path)
-    if image_path.present?
-      BASE_IMAGE_URL + 'w1280' + image_path
-    else
-      'default.png'
-    end
+  def genre(id)
+    GENRES[id]
   end
 
   def first_air(date)
-    date.to_date.strftime('%B %-d, %Y')
+    date.present? ? date.to_date.strftime('%B %-d, %Y') : "Not Available"
   end
 
-  def genre(id)
-    GENRES[id]
+  def backdrop_present?(image_path)
+    image_path.present? ? BASE_IMAGE_URL + 'w1280' + image_path : 'backdrop.png'
+  end
+
+  def poster_present?(image_path)
+    image_path.present? ? BASE_IMAGE_URL + 'w1280' + image_path : 'poster.png'
   end
 
   def rating_color(num)

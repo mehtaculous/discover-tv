@@ -52,3 +52,19 @@ button.btn.btn-outline-secondary.border-left-0.border:focus {
     margin-top: 95px;
   }
 }
+
+
+/* -------------------------------- */
+/* SEARCH CONTENT
+/* -------------------------------- */
+.search-content {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .search-content {
+
+  }
+}

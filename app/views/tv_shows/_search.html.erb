@@ -1,12 +1,12 @@
-<div id="search" class="container-fluid">
-  <div class="row jumbotron jumbotron-fluid main-search">
-    <form class="input-group col-md-6 offset-md-3">
-      <input class="form-control py-2 border-right-0 border" type="search" placeholder="Search for a TV show...">
+<div id="<%= current_page?(root_path) ? 'search' : 'alt-search' %>" class="container-fluid">
+  <div class="row jumbotron jumbotron-fluid <%= current_page?(root_path) ? 'main-search' : 'alt-search' %>">
+    <%= form_tag(search_path, :method => 'get', class: 'form-inline input-group col-md-6 offset-md-3') do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search for a TV show...", class: 'form-control py-2 border-right-0 border' %>
       <span class="input-group-append">
-        <button class="btn btn-outline-secondary border-left-0 border" type="submit">
+        <%= button_tag :submit, class: 'btn btn-outline-secondary border-left-0 border' do %>
           <i class="fa fa-search"></i>
-        </button>
+        <% end %>
       </span>
-    </form>
+    <% end %>
   </div>
 </div>

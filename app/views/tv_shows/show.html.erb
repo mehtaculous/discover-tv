@@ -1,39 +1,68 @@
-<%= render 'alt_search' %>
+<%= render 'search' %>
 <div class="tv-show">
   <div class="container">
     <div class="row">
       <div class="col-md-10 offset-md-1 tv-show-content">
+        <!-- Title -->
         <h3><%= @result.name %></h3>
-        <%= image_tag(image_present?(@result.poster_path), size: '200x300') %>
+        <!-- Poster -->
+        <%= image_tag(poster_present?(@result.poster_path), size: '200x300') %>
+        <!-- First Air Date -->
         <p><%= first_air(@result.first_air_date) %></p>
-        <% @result.genres.each do |genre| %>
-          <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
-        <% end %><br>
+        <!-- Rating -->
         <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %>">
           <span><%= rating_percentage(@result.vote_average) %></span>
         </button>
-        <span>
-          <h5>Overview</h5>
-          <p><%= @result.overview %></p>
-        </span>
-        <span>
-          <h5>Created By</h5>
-          <% @result.created_by.each do |creator| %>
-            <p><%= creator.name %></p>
-          <% end %>
-        </span>
-        <span>
-          <h5>Network</h5>
-          <% @result.networks.each do |network| %>
-            <p><%= network.name %></p>
-          <% end %>
-        </span>
-        <span>
-          <h5>Duration</h5>
-          <p><%= @result.episode_run_time[0] %> min</p>
-        </span>
-        <p><%= @result.number_of_seasons %> Seasons</p>
-        <p><%= @result.number_of_episodes %> Episodes</p>
+        <!-- Genres -->
+        <% @result.genres.each do |genre| %>
+          <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
+        <% end %>
+        <!-- Overview -->
+        <% if @result.overview.present? %>
+          <span>
+            <h5>Overview</h5>
+            <p><%= @result.overview %></p>
+          </span>
+        <% end %>
+        <!-- Created By -->
+        <% if @result.created_by.present? %>
+          <span>
+            <h5>Created By</h5>
+            <p>
+              <% @result.created_by.each do |creator| %>
+                <%= creator.name %><br>
+              <% end %>
+            <p>
+          </span>
+        <% end %>
+        <!-- Networks -->
+        <% if @result.networks.present? %>
+          <span>
+            <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
+            <p>
+              <% @result.networks.each do |network| %>
+                <%= network.name %><br>
+              <% end %>
+            </p>
+          </span>
+        <% end %>
+        <!-- Runtime -->
+        <% if @result.episode_run_time.present? %>
+          <span>
+            <h5>Runtime</h5>
+            <p><%= @result.episode_run_time[0] %> min</p>
+          </span>
+        <% end %>
+        <!-- Duration -->
+        <% if @result.number_of_seasons != 0 %>
+          <span>
+            <h5>Duration</h5>
+            <p>
+              <%= @result.number_of_seasons %> <%= ' Season'.pluralize(@result.number_of_seasons) %><br>
+              <%= @result.number_of_episodes %> Episodes
+            </p>
+          </span>
+        <% end %>
       </div>
     </div>
   </div>
