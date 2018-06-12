@@ -1,0 +1,10 @@
+<div class="my-4">
+  <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %> mr-2 my-1">
+    <span><%= rating_percentage(@result.vote_average) %></span>
+  </button>
+  <% if @result.genres.present? %>
+    <% @result.genres.each do |genre| %>
+      <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
+    <% end %>
+  <% end %>
+</div>

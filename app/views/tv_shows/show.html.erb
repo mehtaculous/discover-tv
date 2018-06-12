@@ -3,69 +3,24 @@
   <div class="row tv-show-content jumbotron">
     <div class="col-lg-3 offset-lg-1 col-md-4">
       <!-- Poster -->
-      <%= image_tag(poster_present?(@result.poster_path), size: '200x300', class: 'mb-4') %>
+      <%= render 'attributes/poster', :results => @results %>
     </div>
     <div class="col-md-8">
-      <!-- Title & Rating-->
-      <h3 style="line-height: 1.5"><%= @result.name %> (<%= first_air(@result.first_air_date).split.last %>)</h3>
-      <!-- Genres -->
-      <div class="my-4">
-        <button type="button" class="btn btn-<%= rating_color(@result.vote_average) %> mr-2 my-1">
-          <span><%= rating_percentage(@result.vote_average) %></span>
-        </button>
-        <% if @result.genres.present? %>
-          <% @result.genres.each do |genre| %>
-            <span class="btn btn-outline-dark btn-sm my-1"><%= genre.name %></span>
-          <% end %>
-        <% end %>
-      </div>
+      <!-- Title -->
+      <%= render 'attributes/title', :results => @results %>
+      <!-- Rating & Genres -->
+      <%= render 'attributes/genres', :results => @results %>
       <!-- Overview -->
-      <% if @result.overview.present? %>
-        <span>
-          <h5>Overview</h5>
-          <p class="overview"><%= @result.overview %></p>
-        </span>
-      <% end %>
+      <%= render 'attributes/overview', :results => @results %>
       <div class="row">
         <!-- Created By -->
-        <% if @result.created_by.present? %>
-          <div class="col-sm-6 col-xl-3 my-2">
-            <h5>Created By</h5>
-            <% @result.created_by.each do |creator| %>
-              <span class="btn btn-outline-dark btn-sm my-1"><%= creator.name %></span><br>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render 'attributes/created_by', :results => @results %>
         <!-- Series -->
-        <% if @result.number_of_seasons != 0 %>
-          <div class="col-sm-6 col-xl-3 my-2">
-            <h5>Series</h5>
-            <span class="btn btn-outline-dark btn-sm my-1">
-              <%= @result.number_of_seasons %> <%= ' Season'.pluralize(@result.number_of_seasons) %>
-            </span><br>
-            <span class="btn btn-outline-dark btn-sm my-1">
-              <%= @result.number_of_episodes %> Episodes
-            </span>
-          </div>
-        <% end %>
+        <%= render 'attributes/series', :results => @results %>
         <!-- Runtime -->
-        <% if @result.episode_run_time.present? %>
-          <div class="col-sm-6 col-xl-3 my-2">
-            <h5>Runtime</h5>
-            <% @result.episode_run_time.take(2).each do |time| %>
-              <span class="btn btn-outline-dark btn-sm my-1"><%= time %> min</span><br>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render 'attributes/runtime', :results => @results %>
         <!-- Networks -->
-        <% if @result.networks.present? %>
-          <div class="col-sm-6 col-xl-3 my-2">
-            <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
-            <% @result.networks.each do |network| %>
-              <span class="btn btn-outline-dark btn-sm my-1"><%= network.name %></span><br>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render 'attributes/networks', :results => @results %>
       </div>
     </div>
   </div>

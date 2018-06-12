@@ -1,0 +1,11 @@
+<% if @result.number_of_seasons != 0 %>
+  <div class="col-sm-6 col-xl-3 my-2">
+    <h5>Series</h5>
+    <span class="btn btn-outline-dark btn-sm my-1">
+      <%= @result.number_of_seasons %> <%= ' Season'.pluralize(@result.number_of_seasons) %>
+    </span><br>
+    <span class="btn btn-outline-dark btn-sm my-1">
+      <%= @result.number_of_episodes %> Episodes
+    </span>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<% if @result.episode_run_time.present? %>
+  <div class="col-sm-6 col-xl-3 my-2">
+    <h5>Runtime</h5>
+    <% @result.episode_run_time.take(2).each do |time| %>
+      <span class="btn btn-outline-dark btn-sm my-1"><%= time %> min</span><br>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<% if @result.networks.present? %>
+  <div class="col-sm-6 col-xl-3 my-2">
+    <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
+    <% @result.networks.each do |network| %>
+      <span class="btn btn-outline-dark btn-sm my-1"><%= network.name %></span><br>
+    <% end %>
+  </div>
+<% end %>
