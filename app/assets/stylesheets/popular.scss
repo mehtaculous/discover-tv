@@ -46,9 +46,10 @@ span.btn.btn-outline-dark.btn-sm.my-1:focus {
   box-shadow: none;
 }
 
-button.btn.btn-success,
-button.btn.btn-warning,
-button.btn.btn-danger {
+button.btn.btn-success:focus,
+button.btn.btn-warning:focus,
+button.btn.btn-danger:focus,
+button.btn.btn-primary:focus {
   outline: none !important;
   box-shadow: none;
 }

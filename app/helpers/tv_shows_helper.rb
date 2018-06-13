@@ -31,8 +31,10 @@ module TvShowsHelper
       "success"
     elsif num >= 5
       "warning"
-    else
+    elsif num > 0
       "danger"
+    else
+      "primary"
     end
   end
 

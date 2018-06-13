@@ -9,6 +9,11 @@
   margin-bottom: 50px;
 }
 
+a.btn.btn-primary.btn-sm.mb-2:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
 @media (max-width: 568px) {
   .tv-show {
     text-align: center;
