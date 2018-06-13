@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TvShowsController, type: :controller do
-  let(:popular) { Tmdb::TV.popular.results }
-  let(:search) { Tmdb::Search.tv('West').results }
+RSpec.describe TvShowsController do
   let(:show) { Tmdb::TV.detail(63247) }
 
   describe "GET #index" do
