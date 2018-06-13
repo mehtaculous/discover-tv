@@ -17,12 +17,12 @@ RSpec.describe TvShowsController do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, {id: show.id}
+      get :show, params: {id: show.id}
       expect(response).to be_successful
     end
 
     it "renders show view" do
-      get :show, {id: show.id}
+      get :show, params: {id: show.id}
       expect(response).to render_template :show
     end
   end

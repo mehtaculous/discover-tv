@@ -20,7 +20,7 @@ RSpec.feature "TvShows" do
       expect(page).to have_content('Search Results')
     end
 
-    it "redirects user to home page" do
+    it "empty query redirects user to home page" do
       visit root_path
       within("#search") do
         fill_in('query', :with => '')
