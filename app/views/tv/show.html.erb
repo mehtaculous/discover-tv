@@ -1,0 +1,27 @@
+<%= render 'search' %>
+<div class="container tv-show">
+  <div class="row tv-show-content jumbotron">
+    <div class="col-lg-3 offset-lg-1 col-md-4">
+      <!-- Poster -->
+      <%= render 'attrs/poster', :results => @results %>
+    </div>
+    <div class="col-md-8">
+      <!-- Title -->
+      <%= render 'attrs/title', :results => @results %>
+      <!-- Rating & Genres -->
+      <%= render 'attrs/genre', :results => @results %>
+      <!-- Overview -->
+      <%= render 'attrs/overview', :results => @results %>
+      <div class="row">
+        <!-- Created By -->
+        <%= render 'attrs/creator', :results => @results %>
+        <!-- Series -->
+        <%= render 'attrs/series', :results => @results %>
+        <!-- Runtime -->
+        <%= render 'attrs/runtime', :results => @results %>
+        <!-- Networks -->
+        <%= render 'attrs/network', :results => @results %>
+      </div>
+    </div>
+  </div>
+</div>

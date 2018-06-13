@@ -4,7 +4,7 @@
       <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.name %></h5>
-          <%= link_to image_tag(backdrop_present?(show.backdrop_path), class: "card-img"), tv_show_path(show.id) %>
+          <%= link_to image_tag(backdrop_present?(show.backdrop_path), class: "card-img"), tv_path(show.id) %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= first_air(show.first_air_date) %></li>
             <li class="list-group-item">
