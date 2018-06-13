@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe TvShowsController, type: :controller do
+  let(:popular) { Tmdb::TV.popular.results }
+  let(:search) { Tmdb::Search.tv('West').results }
+  let(:show) { Tmdb::TV.detail(63247) }
 
   describe "GET #index" do
     it "returns http success" do
@@ -16,12 +19,12 @@ RSpec.describe TvShowsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, {id: 63247}
+      get :show, {id: show.id}
       expect(response).to be_successful
     end
 
     it "renders show view" do
-      get :show, {id: 63247}
+      get :show, {id: show.id}
       expect(response).to render_template :show
     end
   end
