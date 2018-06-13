@@ -6,7 +6,7 @@ A search engine for discovering new and popular TV shows
 With Hollywood movies on the decline, Television is more popular than ever before. However, the underlying issue stems from deciding which shows are worthy of our precious time.
 
 ## Solution
-DiscoverTV is a platform for discovering a variety of TV shows that are rated only by your friends and acquaintances. Find out what shows your fellow peers are casually watching, binging, and passing on.
+DiscoverTV is a platform for discovering a wide variety of TV shows that are rated only by your friends and acquaintances. Find out what shows your fellow peers are casually watching, binging, and passing on.
 
 
 ## Languages, Frameworks & Tools
@@ -18,12 +18,13 @@ DiscoverTV is a platform for discovering a variety of TV shows that are rated on
 
 
 ## Missing Features
-1. Flash messages
-2. Multiple page results
+1. Flash messages for displaying errors
+2. Pagination of popular and search results
 
 
 ## Additional Features
 1. User authentication with profile
 2. Voting, dislikes and favorites
-3. Typeahead for autocomplete search
-4. Weekly email recommendations
+3. Typeahead for autocomplete
+4. Dropdown search filters
+5. Weekly email recommendations

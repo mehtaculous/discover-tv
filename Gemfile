@@ -15,6 +15,7 @@ gem 'bootstrap'
 gem "font-awesome-rails"
 gem 'figaro'
 gem 'themoviedb-api'
+gem 'will_paginate', '~> 3.1.0'
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
