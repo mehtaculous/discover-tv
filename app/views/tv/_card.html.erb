@@ -1,6 +1,6 @@
 <div class="row">
-  <% @total_pages.times do |i| %>
-    <% @results[i].each do |show| %>
+  <% @total_pages.times do |page| %>
+    <% @results[page].each do |show| %>
       <div class="col-md-6 col-lg-4 text-center">
         <div class="card">
           <h5 class="card-header"><%= show.name %></h5>
