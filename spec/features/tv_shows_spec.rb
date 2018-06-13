@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "TvShows" do
-  let(:popular) { Tmdb::TV.popular.results }
-  let(:search) { Tmdb::Search.tv('West').results }
   let(:show) { Tmdb::TV.detail(63247) }
 
   describe "popular shows" do
@@ -13,13 +11,22 @@ RSpec.feature "TvShows" do
   end
 
   describe "search results" do
-    it "display results matching query" do
+    it "displays results matching query" do
       visit root_path
       within("#search") do
-        fill_in('query', :with => 'West')
+        fill_in('query', :with => 'Westworld')
       end
-      find(:css, 'i.fa.fa-search').click
-      expect(page).to have_css('#search')
+      find(:css, '#search-button').click
+      expect(page).to have_content('Search Results')
+    end
+
+    it "redirects user to home page" do
+      visit root_path
+      within("#search") do
+        fill_in('query', :with => '')
+      end
+      find(:css, '#search-button').click
+      expect(current_path).to have_content('/')
     end
   end
 
@@ -27,6 +34,7 @@ RSpec.feature "TvShows" do
     it "displays details of tv show" do
       visit tv_show_path(show.id)
       expect(page).to have_content(show.name)
+      expect(page).to have_content(show.overview)
     end
   end
 end
