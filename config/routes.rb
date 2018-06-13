@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :tv, only: [:show]
+  resources :tv_shows, only: [:show], :path => 'tv'
 
-  get 'search' => 'tv#search'
+  get 'search' => 'tv_shows#search'
 
-  root 'tv#index'
+  root 'tv_shows#index'
 
 end

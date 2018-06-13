@@ -1,4 +1,4 @@
-class TvController < ApplicationController
+class TvShowsController < ApplicationController
   def index
     @results = []
     @total_pages = 10
