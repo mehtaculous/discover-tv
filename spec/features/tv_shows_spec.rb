@@ -7,6 +7,7 @@ RSpec.feature "TvShows" do
     it "displays list of popular tv shows" do
       visit root_path
       expect(page).to have_css('#popular')
+      expect(page).to have_css('.card')
     end
   end
 
@@ -18,6 +19,7 @@ RSpec.feature "TvShows" do
       end
       find(:css, '#search-button').click
       expect(page).to have_content('Search Results')
+      expect(page).to have_css('.card')
     end
 
     it "empty query redirects user to home page" do
