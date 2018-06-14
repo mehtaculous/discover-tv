@@ -27,6 +27,6 @@
 </div>
 <div class="row">
   <div class="col-md-12 mt-5 mb-2">
-    <%= will_paginate(@results, :inner_window => 1, :outer_window => 0, :previous_label => 'Previous', :next_label => 'Next', :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
+    <%= will_paginate(@results, :inner_window => 1, :outer_window => 0, :previous_label => 'Prev', :next_label => 'Next', :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-md') %>
   </div>
 </div>
