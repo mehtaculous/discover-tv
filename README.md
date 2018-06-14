@@ -20,6 +20,7 @@ DiscoverTV is a platform for discovering a wide variety of TV shows that are rat
 ## Missing Features
 1. Flash messages for displaying errors
 2. Pagination of popular shows and search results
+3. Test helper methods
 
 
 ## Additional Features

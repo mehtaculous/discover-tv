@@ -2,11 +2,7 @@
   <div class="col-sm-6 col-xl-3 my-2">
     <h5><%= 'Network'.pluralize(@result.networks.count) %></h5>
     <% @result.networks.each do |network| %>
-      <% if network.logo_path.present? %>
-        <%= image_tag(logo(network.logo_path), class: 'mb-4') %><br>
-      <% else %>
-        <span class="btn btn-outline-dark btn-sm my-1"><%= network.name %></span><br>
-      <% end %>
+      <span class="btn btn-outline-dark btn-sm my-1"><%= network.name %></span><br>
     <% end %>
   </div>
 <% end %>
