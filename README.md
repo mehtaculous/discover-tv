@@ -14,12 +14,12 @@ DiscoverTV is a platform for discovering a wide variety of TV shows that are rat
 2. Bootstrap - CSS framework for a sleek and elegant UI
 3. jQuery - JavaScript library to simplify the usage of effects and animations
 4. Heroku - Free and easy-to-use hosting service for production-ready applications
-5. The Movie Database API - Ruby wrapper that provides a simple and intuitive interface
+5. [The Movie Database API](https://github.com/18Months/themoviedb-api) - Ruby wrapper that provides a simple and intuitive interface
 
 
 ## Missing Features
 1. Flash messages for displaying errors
-2. Pagination of popular and search results
+2. Pagination of popular shows and search results
 
 
 ## Additional Features

@@ -1,7 +1,9 @@
+require 'will_paginate/array'
+
 class TvShowsController < ApplicationController
   def index
     @results = []
-    @total_pages = 10
+    @total_pages = 20
     @total_pages.times do |i|
       @results << Tmdb::TV.popular(page: i + 1).results
     end
@@ -10,14 +12,16 @@ class TvShowsController < ApplicationController
   def search
     @results = []
     @total_pages = 0
+    @total_results = 0
     if params[:query].present?
       @total_pages = Tmdb::Search.tv(params[:query]).total_pages
       @total_pages.times do |page|
         page += 1
         @results << Tmdb::Search.tv(params[:query], page: page).results
         @total_pages = page
-        break if @total_pages == 10
+        break if @total_pages == 20
       end
+      @results.each { |result| @total_results += result.count }
     else
       redirect_to root_path
     end

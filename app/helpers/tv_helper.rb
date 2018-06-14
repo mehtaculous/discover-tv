@@ -26,6 +26,10 @@ module TvHelper
     image_path.present? ? BASE_IMAGE_URL + 'w1280' + image_path : 'poster.png'
   end
 
+  def logo(image_path)
+    BASE_IMAGE_URL + 'w92' + image_path
+  end
+
   def rating_color(num)
     if num >= 8
       "success"
