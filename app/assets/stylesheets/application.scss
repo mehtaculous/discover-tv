@@ -27,3 +27,12 @@ html, body {
   color: #222;
   font-family: 'Roboto', sans-serif;
 }
+
+.pagination {
+  justify-content: center;
+}
+
+a.page-link:focus {
+  outline: none !important;
+  box-shadow: none;
+}

@@ -7,6 +7,7 @@ class TvShowsController < ApplicationController
     @total_pages.times do |i|
       @results << Tmdb::TV.popular(page: i + 1).results
     end
+    @results = @results.flatten.paginate(:page => params[:page], :per_page => 21)
   end
 
   def search
@@ -22,6 +23,7 @@ class TvShowsController < ApplicationController
         break if @total_pages == 20
       end
       @results.each { |result| @total_results += result.count }
+      @results = @results.flatten.paginate(:page => params[:page], :per_page => 21)
     else
       redirect_to root_path
     end
