@@ -3,7 +3,7 @@ require 'will_paginate/array'
 class TvShowsController < ApplicationController
   def index
     @results = []
-    @total_pages = 25
+    @total_pages = 10
     @total_pages.times do |i|
       @results << Tmdb::TV.popular(page: i + 1).results
     end
@@ -20,7 +20,7 @@ class TvShowsController < ApplicationController
         page += 1
         @results << Tmdb::Search.tv(params[:query], page: page).results
         @total_pages = page
-        break if @total_pages == 25
+        break if @total_pages == 10
       end
       @results.each { |result| @total_results += result.count }
       @results = @results.flatten.paginate(:page => params[:page], :per_page => 21)
