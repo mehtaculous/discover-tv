@@ -15,14 +15,24 @@ RSpec.feature "TvShows" do
     it "displays results matching query" do
       visit root_path
       within("#search") do
-        fill_in('query', :with => 'Westworld')
+        fill_in('query', :with => 'West')
       end
       find(:css, '#search-button').click
-      expect(page).to have_content('Search Results')
+      expect(page).to have_content('Search Results (151)')
       expect(page).to have_css('.card')
     end
 
-    it "empty query redirects user to home page" do
+    it "displays no results to match query" do
+      visit root_path
+      within("#search") do
+        fill_in('query', :with => 'asdf')
+      end
+      find(:css, '#search-button').click
+      expect(page).to have_content('Search Results (0)')
+      expect(page).not_to have_css('.card')
+    end
+
+    it "redirects user to home page with empty query" do
       visit root_path
       within("#search") do
         fill_in('query', :with => '')
