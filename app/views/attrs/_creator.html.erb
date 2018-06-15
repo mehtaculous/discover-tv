@@ -1,8 +1,8 @@
 <% if @result.created_by.present? %>
   <div class="col-sm-6 col-xl-3 my-2">
-    <h5><%= 'Creator'.pluralize(@result.created_by.count) %></h5>
+    <h5 style="text-decoration: underline"><%= 'Creator'.pluralize(@result.created_by.count) %></h5>
     <% @result.created_by.each do |creator| %>
-      <span class="btn btn-outline-dark btn-sm my-1"><%= creator.name %></span><br>
+      <span><%= creator.name %></span><br>
     <% end %>
   </div>
 <% end %>
