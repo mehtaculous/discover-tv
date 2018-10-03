@@ -12,7 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'bootstrap'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'figaro'
 gem 'themoviedb-api'
 gem 'will_paginate', '~> 3.1.0'
