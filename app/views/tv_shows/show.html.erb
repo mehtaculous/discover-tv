@@ -9,18 +9,18 @@
       <!-- Title -->
       <h3 style="line-height: 1.5"><%= @result.name %> (<%= first_air(@result.first_air_date).split.last %>)</h3>
       <!-- Rating & Genres -->
-      <%= render 'attrs/genre', :results => @results %>
+      <%= render 'tv_attrs/genre', :results => @results %>
       <!-- Overview -->
-      <%= render 'attrs/overview', :results => @results %>
+      <%= render 'tv_attrs/overview', :results => @results %>
       <div class="row">
         <!-- Created By -->
-        <%= render 'attrs/creator', :results => @results %>
+        <%= render 'tv_attrs/creator', :results => @results %>
         <!-- Series -->
-        <%= render 'attrs/series', :results => @results %>
+        <%= render 'tv_attrs/series', :results => @results %>
         <!-- Runtime -->
-        <%= render 'attrs/runtime', :results => @results %>
+        <%= render 'tv_attrs/runtime', :results => @results %>
         <!-- Networks -->
-        <%= render 'attrs/network', :results => @results %>
+        <%= render 'tv_attrs/network', :results => @results %>
       </div>
     </div>
   </div>

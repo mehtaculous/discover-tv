@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_202023) do
+ActiveRecord::Schema.define(version: 2018_10_04_012542) do
+
+  create_table "tv_shows", force: :cascade do |t|
+    t.string "name"
+    t.date "first_air"
+    t.float "rating"
+    t.string "genre"
+    t.text "overview"
+    t.string "poster_path"
+    t.string "backdrop_path"
+    t.string "homepage"
+    t.string "creator"
+    t.integer "seasons"
+    t.integer "episodes"
+    t.integer "run_time"
+    t.string "network"
+    t.integer "tv_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tv_shows_on_name"
+    t.index ["tv_id"], name: "index_tv_shows_on_tv_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"

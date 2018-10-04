@@ -1,4 +1,8 @@
-class TvShow
+class TvShow < ApplicationRecord
+  serialize :genre
+  serialize :creator
+  serialize :network
+
   def self.popular
     results = []
     total_pages = 15
