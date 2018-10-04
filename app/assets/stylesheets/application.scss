@@ -14,6 +14,8 @@
  */
 @import "bootstrap";
 @import "font-awesome";
+@import "flash";
+@import "devise";
 @import "navigation";
 @import "header";
 @import "search";
@@ -35,4 +37,10 @@ html, body {
 a.page-link:focus {
   outline: none !important;
   box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #cccccc;
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }

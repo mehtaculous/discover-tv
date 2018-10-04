@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'themoviedb-api'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
+gem 'devise'
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -38,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
   gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'faker'
+  gem 'factory_bot'
   gem 'pry-rails'
 end
 

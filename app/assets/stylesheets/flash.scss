@@ -1,0 +1,39 @@
+/* -------------------------------- */
+/* FLASH MESSAGES
+/* -------------------------------- */
+.flash-message {
+  color: #ffffff;
+  position: absolute;
+  font-size: 18px;
+  border-color: transparent;
+  border-radius: 10px;
+  width: 90%;
+  z-index: 1000;
+}
+
+.alert-success {
+  text-align: center;
+  background-color: #499871;
+}
+
+.alert-warning {
+  text-align: center;
+  background-color: #984949;
+}
+
+.position-root {
+  margin-top: 90px;
+}
+
+.position {
+  margin-top: -70px;
+}
+
+@media (min-width: 768px) {
+  .alert-success {
+    width: 80%;
+  }
+  .alert-warning {
+    width: 80%;
+  }
+}
