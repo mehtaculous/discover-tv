@@ -4,16 +4,16 @@ class CreateTvShows < ActiveRecord::Migration[5.2]
       t.string :name
       t.date :first_air
       t.float :rating
-      t.string :genre
+      t.string :genres
       t.text :overview
       t.string :poster_path
       t.string :backdrop_path
       t.string :homepage
-      t.string :creator
+      t.string :creators
       t.integer :seasons
       t.integer :episodes
-      t.integer :run_time
-      t.string :network
+      t.string :run_times
+      t.string :networks
       t.integer :tv_id
 
       t.timestamps
