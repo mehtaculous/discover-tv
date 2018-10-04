@@ -3,7 +3,7 @@
 /* -------------------------------- */
 .form {
   color: #222;
-  margin-top: 175px;
+  margin-top: 170px;
   margin-bottom: 150px;
 }
 
@@ -23,5 +23,8 @@
   div.col-md-4.offset-md-4.col-lg-4.offset-lg-4.devise {
     margin-left: 20px;
     margin-right: 20px;
+  }
+  .form {
+    margin-top: 150px;
   }
 }
