@@ -2,15 +2,23 @@ require 'will_paginate/array'
 
 class TvShowsController < ApplicationController
   def index
-    @results = TvShow.popular.paginate(:page => params[:page], :per_page => 30)
+    data = TvShow.popular(params[:page])
+    @results = data["results"]
+    @total_results = data["total_results"]
+    @total_pages = Array.new(@total_results)
+    @total_pages = @total_pages.paginate(:page => params[:page], :per_page => 20)
   end
 
   def search
     @results = []
+    @total_pages = 0
     @total_results = 0
     if params[:query].present?
-      @results, @total_results = TvShow.search(params[:query])
-      @results = @results.paginate(:page => params[:page], :per_page => 30)
+      data = TvShow.search(params[:query], params[:page])
+      @results = data["results"]
+      @total_results = data["total_results"]
+      @total_pages = Array.new(@total_results)
+      @total_pages = @total_pages.paginate(:page => params[:page], :per_page => 20)
     else
       redirect_to root_path
     end

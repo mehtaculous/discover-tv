@@ -18,7 +18,7 @@ gem 'themoviedb-api'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
 gem 'devise'
-
+gem 'redis', '~> 4.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

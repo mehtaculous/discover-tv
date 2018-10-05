@@ -21,20 +21,15 @@ class TvShow < ApplicationRecord
   serialize :run_times
   serialize :networks
 
-  def self.popular
-    results = []
-    total_pages = 15
-    1.upto(total_pages) { |page| results << Tmdb::TV.popular(page: page).results }
-    return results.flatten
+  def self.popular(page)
+    Rails.cache.fetch("popular/#{page}", expires_in: 30.minutes) do
+      Tmdb::TV.popular(page: page)
+    end
   end
 
-  def self.search(query)
-    results = []
-    total_pages = Tmdb::Search.tv(query).total_pages
-    1.upto(total_pages) do |page|
-      results << Tmdb::Search.tv(query, page: page).results
-      break if page == 15
+  def self.search(query, page)
+    Rails.cache.fetch("search/#{query}/#{page}", expires_in: 30.minutes) do
+      Tmdb::Search.tv(query, page: page)
     end
-    return [results.flatten, results.flatten.count]
   end
 end
