@@ -6,7 +6,7 @@ class TvShowsController < ApplicationController
     @results = data["results"]
     @total_results = data["total_results"]
     @total_pages = Array.new(@total_results)
-    @total_pages = @total_pages.paginate(:page => params[:page], :per_page => 20)
+    @total_pages = @total_pages.paginate(:page => params[:page], :per_page => 20, :total_entries => 20000)
   end
 
   def search
