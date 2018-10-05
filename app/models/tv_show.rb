@@ -23,13 +23,13 @@ class TvShow < ApplicationRecord
 
   def self.popular(page)
     Rails.cache.fetch("popular/#{page}", expires_in: 30.minutes) do
-      Tmdb::TV.popular(page: page)
+      Tmdb::TV.popular(page: page) if page.to_i <= 1000
     end
   end
 
   def self.search(query, page)
     Rails.cache.fetch("search/#{query}/#{page}", expires_in: 30.minutes) do
-      Tmdb::Search.tv(query, page: page)
+      Tmdb::Search.tv(query, page: page) if page.to_i <= 1000
     end
   end
 end
