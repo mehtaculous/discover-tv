@@ -2,11 +2,11 @@ require 'will_paginate/array'
 
 class TvShowsController < ApplicationController
   def index
-    data = TvShow.popular(params[:page])
     if params[:page].to_i <= 1000
+      data = TvShow.popular(params[:page])
       get_results(data)
     else
-      redirect_to root_path
+      redirect_to request.referrer
     end
   end
 
